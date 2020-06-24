@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block body %}
+    <h2>Sign Up</h2>
+{% if error %}
+    <div class=error><strong>Error:</strong> {{ error }}</div>
+{% endif %}
+<table border="1" style="undefined;table-layout: fixed; width: 300px">
+<colgroup>
+<col style="width: 100px">
+<col style="width: 200px">
+<col style="width: 1px">
+</colgroup>
+<thead>
+  <tr>
+    <th class="tg-0pky">과목명</th>
+    <th class="tg-0pky" colspan="2">산업 AI</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky" colspan="3"><input type=text name=username size=30></td>
+  </tr>
+</tbody>
+</table>
+
+{% endblock %}

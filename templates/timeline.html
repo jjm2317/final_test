@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block title %}
+{% if request.endpoint == 'public_timeline' %}
+    Public Timeline
+{% elif request.endpoint == 'user_timeline' %}
+    {{ profile_user.username }}'s Timeline
+{% else %}
+    My Timeline
+{% endif %}
+{% endblock %}
+{% block body %}
+<h2>{{ self.title() }}</h2>
+    <table border="1",width= 603px">
+<colgroup>
+<col style="width: 201px">
+<col style="width: 201px">
+<col style="width: 201px">
+</colgroup>
+<thead>
+  <tr>
+    <th><span style="font-weight:bold">과목명</span></th>
+    <th><span style="font-weight:bold">담당교원</span></th>
+    <th><span style="font-weight:bold;text-decoration:underline">메모장</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>머신러닝</td>
+    <td>이종태 교수님</td>
+    <td><a href="{{ url_for('register') }}">이동</td>
+  </tr>
+  <tr>
+    <td>정보시스템 통합 및 실습</td>
+    <td>간자르 교수님</td>
+    <td><a href="{{ url_for('memo1') }}">이동</td>
+  </tr>
+  <tr>
+    <td>산업 AI</td>
+    <td>우딘 교수님</td>
+    <td><a href="{{ url_for('memo3') }}">이동</a></td>
+  </tr>
+  <tr>
+    <td  colspan="3"><span style="font-weight:bold">기능</span></td>
+  </tr>
+  <tr>
+    <td >계산기</td>
+    <td colspan="2"><a href="{{ url_for('sessions') }}">이동</a></td>
+  </tr>
+</tbody>]
+{% endblock %}
+
